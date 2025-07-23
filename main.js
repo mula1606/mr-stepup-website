@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'nike-air-max-1',
             name: 'Nike Jordan 4 Retro OG',
             price: 2499.00,
-            image: 'kicks/White J4 Both.jpg',
+            image: 'assets/kicks/White J4 Both.jpg',
             description: 'The original Air Max, a timeless classic that started it all. Featuring visible Air cushioning and iconic design lines.',
             features: [
                 'Visible Max Air unit in the heel for classic cushioning.',
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Original 1987 design elements.'
             ],
             otherImages: [
-                'kicks/White J4 Right.jpg',
+                'assets/kicks/White J4 Right.jpg',
                 'https://placehold.co/400x300/F3F4F6/6B7280?text=Nike+Air+Max+1+Back',
                 'https://placehold.co/400x300/F3F4F6/6B7280?text=Nike+Air+Max+1+Sole'
             ]
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 'adidas-superstar',
             name: 'Nike Air Force 1 Hightop Black',
             price: 1899.00,
-            image: 'kicks 2/Black AF1 High Both.jpg',
+            image: 'assets/kicks 2/Black AF1 High Both.jpg',
             description: 'The legendary shell-toe sneaker, a staple of street culture since the 80s. Premium leather and classic detailing.',
             features: [
                 'Full-grain leather upper for comfort and soft feel.',
@@ -36,16 +36,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Authentic 80s silhouette.'
             ],
             otherImages: [
-                'kicks 2/Black AF1 High Right.jpg',
-                'kicks 2/Black AF1 High Back.jpg',
-                'kicks 2/Black AF1 High Front.jpg'
+                'assets/kicks 2/Black AF1 High Right.jpg',
+                'assets/kicks 2/Black AF1 High Back.jpg',
+                'assets/kicks 2/Black AF1 High Front.jpg'
             ]
         },
         {
             id: 'puma-suede-classic',
             name: 'Puma Suede Classic',
             price: 1599.00,
-            image: 'kicks 2/Puma X LULU Black/Green Both.jpg',
+            image: 'assets/kicks 2/Puma X LULU Black/Green Both.jpg',
             description: 'A true icon of sport and street style, the Puma Suede has been making waves since 1968. Timeless and versatile.',
             features: [
                 'Full suede upper for a premium look and feel.',
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Original 1968 design.'
             ],
             otherImages: [
-                'kicks 2/Puma X LULU Black/Green Right.jpg',
-                'kicks 2/Puma X LULU Black/Green Front.jpg',
-                'kicks 2/Puma X LULU Black/Green Back.jpg',
-                'kicks 2/Puma X LULU Black/Green Soul & Front.jpg',
-                'kicks 2/Puma X LULU Black/Green Fitted.jpg',
+                'assets/kicks 2/Puma X LULU Black/Green Right.jpg',
+                'assets/kicks 2/Puma X LULU Black/Green Front.jpg',
+                'assets/kicks 2/Puma X LULU Black/Green Back.jpg',
+                'assets/kicks 2/Puma X LULU Black/Green Soul & Front.jpg',
+                'assets/kicks 2/Puma X LULU Black/Green Fitted.jpg',
             ]
         },
         {
@@ -268,14 +268,14 @@ document.addEventListener('DOMContentLoaded', () => {
         messageBox.className = 'rounded-lg show'; // Reset classes and add 'show'
         if (type === 'success') {
             messageBox.style.backgroundColor = '#10B981'; /* Emerald Green */
-        } else if (type === 'error') {
-            messageBox.style.backgroundColor = '#EF4444'; /* Red */
-        } else if (type === 'info') {
-            messageBox.style.backgroundColor = '#3B82F6'; /* Blue */
-        }
+            } else if (type === 'error') {
+                messageBox.style.backgroundColor = '#EF4444'; /* Red */
+            } else if (type === 'info') {
+                messageBox.style.backgroundColor = '#3B82F6'; /* Blue */
+            }
 
-        setTimeout(() => {
-            messageBox.className = 'rounded-lg'; // Hide by removing 'show'
+            setTimeout(() => {
+                messageBox.className = 'rounded-lg'; // Hide by removing 'show'
         }, 3000);
     };
 
