@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000;
+    color: #E2E8F0; /* lighter text for better contrast on black */
+}
+
+/* Product Card Animations */
+.product-card {
+    transition: transform 0.5s ease-out, box-shadow 0.3s ease-in-out, opacity 0.5s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    will-change: transform, opacity, box-shadow;
+}
+.product-card.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Product Image Styling */
+.product-card img {
+    width: 100%;
+    height: auto; /* Let height follow image aspect ratio */
+    object-fit: contain; /* Prevents stretching */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* keep hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+.modal.show {
+    display: flex; /* toggle display via JS by adding/removing .show */
+}
+.modal-content {
+    background-color: #FFFFFF;
+    color: #1A202C;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+    border: 1px solid #E2E8F0;
+}
+.close-button {
+    color: #6B7280;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-button:hover,
+.close-button:focus {
+    color: #4B5563;
+}
+.close-button[role="button"] {
+    outline: none;
+}
+
+/* Fade In Keyframe */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Success Message Box */
+#messageBox {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+#messageBox.show {
+    opacity: 1;
+    display: block; /* ensure visible */
+}
+
+/* Typing Effect */
+.typing-effect {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret .75s step-end infinite;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+.cart-count-bounce {
+    animation: bounce 0.3s ease-in-out;
+}
+
+/* Confetti for Add to Cart */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    opacity: 0;
+    animation: fade-out 1s forwards;
+}
+@keyframes fade-out {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+    100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--deg)); }
+}
+
+/* Thumbnail Highlight */
+.thumbnail-img.active {
+    border: 2px solid #000000;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+}
+
+/* Scroll-to-top Button */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: #3B82F6;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+#scrollToTopBtn:hover {
+    background-color: #2563EB;
+    transform: translateY(-3px);
+}
+
+/* ✅ Slideshow Hero Container */
+.hero-slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full height of the section */
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 15px;
+    will-change: opacity;
+}
+.hero-slideshow-container .mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.hero-slideshow-container .mySlides.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Arrows */
+.hero-slideshow-container .prev, .hero-slideshow-container .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 3;
+    background-color: rgba(0,0,0,0.4);
+}
+.hero-slideshow-container .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.hero-slideshow-container .prev:hover, .hero-slideshow-container .next:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* Hero Background Gradient */
+.hero-gradient-animated {
+    height: 80vh; /* or any value that makes it nicely tall */
+    position: relative;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Hero Content Above Slideshow */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures text is above slideshow */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Fills the hero container */
+    text-align: center;
+    padding: 2rem;
+}
+
+section[id] {
+  scroll-margin-top: 100px; /* Adjust based on navbar height */
+}
+
+/* Section Reveal on Scroll */
+.section-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.section-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Spinner */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3B82F6;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
