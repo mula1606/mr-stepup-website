@@ -10,13 +10,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="main.css">
+<<<<<<< HEAD
 </head>
 <body class="min-h-screen flex flex-col">
+=======
+    <link rel="stylesheet" href="Navbar.css" />
+</head>
+<body class="min-h-screen flex flex-col">
+    <div id="navbar-placeholder"></div>
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 
     <!-- Message Box -->
     <div id="messageBox" class="rounded-lg"></div>
 
     <!-- Header -->
+<<<<<<< HEAD
     <header class="bg-gray-50 text-gray-900 p-6 shadow-xl border-b border-gray-200">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-4xl font-extrabold tracking-wider text-blue-600">Mr Stepup.co</h1>
@@ -57,6 +65,95 @@
                 <h2 id="hero-headline" class="text-5xl md:text-6xl font-extrabold mb-4 drop-shadow-lg text-blue-400 typing-effect"></h2>
                 <a href="#products" class="bg-blue-600 text-white hover:bg-blue-700 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300 transform hover:scale-105 border border-blue-500">Shop Now</a>
             </div>
+=======
+<!-- Header -->
+<header class="bg-gray-900 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+  <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="text-2xl font-bold text-white">Mr StepUp</a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="#home" class="hover:text-blue-400 transition">Home</a>
+      <a href="#shop" class="hover:text-blue-400 transition">Shop</a>
+      <a href="#brands" class="hover:text-blue-400 transition">Brands</a>
+      <a href="#contact" class="hover:text-blue-400 transition">Contact</a>
+    </nav>
+    <!-- Mobile Toggle -->
+    <button
+      id="nav-toggle"
+      class="md:hidden focus:outline-none"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+    >
+      <svg
+        class="w-6 h-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="nav-menu"
+    class="hidden md:hidden px-6 pb-4 bg-gray-900 transition-opacity duration-300 ease-in-out"
+    aria-label="Mobile navigation menu"
+  >
+    <a href="#home" class="block py-2 hover:text-blue-400">Home</a>
+    <a href="#shop" class="block py-2 hover:text-blue-400">Shop</a>
+    <a href="#brands" class="block py-2 hover:text-blue-400">Brands</a>
+    <a href="#contact" class="block py-2 hover:text-blue-400">Contact</a>
+  </div>
+</header>
+
+    <!-- Main Content Area -->
+<main class="flex-grow container mx-auto p-5 pt-24">
+  <!-- Hero Section / Home -->
+  <section id="home"
+    class="bg-gradient-to-br from-gray-800 to-gray-950 rounded-2xl shadow-2xl p-8 md:p-16 mb-12 text-center text-white border border-gray-800 hero-gradient-animated"
+    style="min-height: 500px;"
+  >
+    <div class="hero-slideshow-container">
+      <img class="mySlides active" src="assets/logoz/jordan-logo.jpg" alt="Jordan Logo">
+      <img class="mySlides" src="assets/logoz/adidas-logo.jpg" alt="Adidas Logo">
+      <img class="mySlides" src="assets/logoz/converse-logo.jpg" alt="Converse Logo">
+      <img class="mySlides" src="assets/logoz/new-balance-logo.jpg" alt="New Balance Logo">
+      <img class="mySlides" src="assets/logoz/timberland-logo.jpg" alt="Timberland Logo">
+      <img class="mySlides" src="assets/logoz/Converse old- logo.png" alt="Old Converse Logo">
+      <img class="mySlides" src="assets/logoz/nike-logo.jpg" alt="Nike Logo">
+      <img class="mySlides" src="assets/logoz/reebok-logo.jpg" alt="Reebok Logo">
+      <img class="mySlides" src="assets/logoz/puma-logo.jpg" alt="Puma Logo">
+      <img class="mySlides" src="assets/logoz/nike2-logo.jpg.png" alt="Nike2 Logo">
+
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+  </section>
+
+  
+
+ 
+ </main>
+
+         <!-- Hero Section with Gradient Background and Typing Effect -->
+        <section class="hero-gradient-animated relative flex items-center justify-center text-center h-screen mb-16 overflow-hidden px-4">
+        <div class="hero-content max-w-3xl z-10">
+            <h2 id="hero-headline" 
+                class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6 drop-shadow-lg text-blue-400 typing-effect leading-tight">
+                <!-- Dynamic text injected here -->
+            </h2>
+            <a href="#products" 
+            class="inline-block mt-4 bg-blue-600 text-white hover:bg-blue-700 font-semibold py-3 px-10 rounded-full text-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 border border-blue-500">
+            Shop Now
+            </a>
+        </div>
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
         </section>
 
         <!-- Product Listing Section -->
@@ -226,5 +323,18 @@
 
     <!-- Custom JavaScript -->
     <script src="main.js"></script>
+<<<<<<< HEAD
+=======
+    <script>
+  const toggleBtn = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+
+  toggleBtn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+  </script>
+  <script src="Navbar.js" type="module"></script>
+
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 </body>
 </html>

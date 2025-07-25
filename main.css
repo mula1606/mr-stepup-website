@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+<<<<<<< HEAD
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #000000; /* White background */
@@ -35,6 +36,66 @@ body {
 .modal-content {
     background-color: #FFFFFF; /* White background for modal content */
     color: #1A202C; /* Dark text */
+=======
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000000;
+    color: #E2E8F0; /* lighter text for better contrast on black */
+}
+
+/* Product Card Animations */
+.product-card {
+    transition: transform 0.5s ease-out, box-shadow 0.3s ease-in-out, opacity 0.5s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    will-change: transform, opacity, box-shadow;
+}
+.product-card.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+.product-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ✅ Product Image Styling */
+.product-card img {
+    width: 100%;
+    height: auto; /* Let height follow image aspect ratio */
+    object-fit: contain; /* Prevents stretching */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    display: block;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Modal Styling */
+.modal {
+    display: none; /* keep hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+.modal.show {
+    display: flex; /* toggle display via JS by adding/removing .show */
+}
+.modal-content {
+    background-color: #FFFFFF;
+    color: #1A202C;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     margin: auto;
     padding: 30px;
     border-radius: 15px;
@@ -43,10 +104,17 @@ body {
     box-shadow: 0 15px 30px rgba(0,0,0,0.4);
     position: relative;
     animation: fadeIn 0.3s ease-out;
+<<<<<<< HEAD
     border: 1px solid #E2E8F0; /* Subtle border */
 }
 .close-button {
     color: #6B7280; /* Gray close button */
+=======
+    border: 1px solid #E2E8F0;
+}
+.close-button {
+    color: #6B7280;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     position: absolute;
     top: 15px;
     right: 25px;
@@ -57,34 +125,59 @@ body {
 }
 .close-button:hover,
 .close-button:focus {
+<<<<<<< HEAD
     color: #4B5563; /* Darker gray on hover */
     text-decoration: none;
     cursor: pointer;
 }
+=======
+    color: #4B5563;
+}
+.close-button[role="button"] {
+    outline: none;
+}
+
+/* Fade In Keyframe */
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
+<<<<<<< HEAD
 /* Message box styling */
 #messageBox {
     display: none; /* Hidden by default */
+=======
+/* Success Message Box */
+#messageBox {
+    display: none;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+<<<<<<< HEAD
     background-color: #4CAF50; /* Green */
+=======
+    background-color: #4CAF50;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     color: white;
     padding: 15px 25px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
     z-index: 1001; /* Above modal */
+=======
+    z-index: 1001;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     text-align: center;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
 #messageBox.show {
     opacity: 1;
+<<<<<<< HEAD
 }
 
 /* Hero text typing effect */
@@ -94,24 +187,46 @@ body {
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
+=======
+    display: block; /* ensure visible */
+}
+
+/* Typing Effect */
+.typing-effect {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     animation:
         typing 3.5s steps(40, end),
         blink-caret .75s step-end infinite;
 }
+<<<<<<< HEAD
 
 /* The typing animation effect */
+=======
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
 }
+<<<<<<< HEAD
 
 /* The typewriter cursor effect */
+=======
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: orange; }
 }
 
+<<<<<<< HEAD
 /* Cart count bounce animation */
+=======
+/* Bounce Animation */
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
@@ -120,22 +235,34 @@ body {
     animation: bounce 0.3s ease-in-out;
 }
 
+<<<<<<< HEAD
 /* Confetti styles */
+=======
+/* Confetti for Add to Cart */
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 .confetti {
     position: absolute;
     width: 10px;
     height: 10px;
+<<<<<<< HEAD
     background-color: #FFD700; /* Gold */
+=======
+    background-color: #FFD700;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     border-radius: 50%;
     opacity: 0;
     animation: fade-out 1s forwards;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 @keyframes fade-out {
     0% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
     100% { opacity: 0; transform: translate(var(--x), var(--y)) rotate(var(--deg)); }
 }
 
+<<<<<<< HEAD
 /* Thumbnail active state */
 .thumbnail-img.active {
     border: 2px solid #000000; /* Blue-400 */
@@ -157,39 +284,93 @@ body {
     cursor: pointer;
     padding: 15px;
     border-radius: 50%; /* Circular */
+=======
+/* Thumbnail Highlight */
+.thumbnail-img.active {
+    border: 2px solid #000000;
+    box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+}
+
+/* Scroll-to-top Button */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: #3B82F6;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     transition: background-color 0.3s, transform 0.3s;
 }
 #scrollToTopBtn:hover {
+<<<<<<< HEAD
     background-color: #2563EB; /* Darker blue on hover */
     transform: translateY(-3px);
 }
 
 /* Slideshow specific styles for hero background */
+=======
+    background-color: #2563EB;
+    transform: translateY(-3px);
+}
+
+/* ✅ Slideshow Hero Container */
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 .hero-slideshow-container {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+<<<<<<< HEAD
     height: 80%;
     overflow: hidden;
     z-index: 1; /* Behind content */
     border-radius: 15px; /* Match hero section border-radius */
+=======
+    height: 100%; /* Full height of the section */
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 15px;
+    will-change: opacity;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 }
 .hero-slideshow-container .mySlides {
     display: none;
     width: 100%;
+<<<<<<< HEAD
     height: 100%; /* Fill the container */
     object-fit: cover; /* Cover the area */
     border-radius: 15px; /* Match container border-radius */
     transition: opacity 1s ease-in-out; /* Smooth fade between slides */
     position: absolute; /* For layering */
+=======
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     top: 0;
     left: 0;
 }
 .hero-slideshow-container .mySlides.active {
+<<<<<<< HEAD
     opacity: 1;
 }
+=======
+    display: block;
+    opacity: 1;
+}
+
+/* Arrows */
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 .hero-slideshow-container .prev, .hero-slideshow-container .next {
     cursor: pointer;
     position: absolute;
@@ -203,8 +384,13 @@ body {
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+<<<<<<< HEAD
     z-index: 3; /* Above slideshow images but below hero content */
     background-color: rgba(0,0,0,0.4); /* Slightly transparent */
+=======
+    z-index: 3;
+    background-color: rgba(0,0,0,0.4);
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 }
 .hero-slideshow-container .next {
     right: 0;
@@ -214,6 +400,7 @@ body {
     background-color: rgba(0,0,0,0.7);
 }
 
+<<<<<<< HEAD
 /* Hero section gradient animation */
 .hero-gradient-animated {
     background-size: 400% 400%;
@@ -221,6 +408,15 @@ body {
     position: relative; /* Needed for z-index of content and absolute positioning of slideshow */
     overflow: hidden; /* Hide overflow of absolute positioned slideshow */
     background-image: linear-gradient(270deg, rgba(17, 24, 39, 0.6), rgba(31, 41, 55, 0.6), rgba(17, 24, 39, 0.6));
+=======
+/* Hero Background Gradient */
+.hero-gradient-animated {
+    height: 80vh; /* or any value that makes it nicely tall */
+    position: relative;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    overflow: hidden;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 }
 
 @keyframes gradientAnimation {
@@ -229,18 +425,38 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+<<<<<<< HEAD
 /* Ensure hero content is above the slideshow */
 .hero-content {
     position: relative;
     z-index: 2; /* Above the slideshow background */
+=======
+/* Hero Content Above Slideshow */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures text is above slideshow */
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     height: 100%; /* Take full height of hero section */
 }
 
 /* Section reveal animation */
+=======
+    height: 100%; /* Fills the hero container */
+    text-align: center;
+    padding: 2rem;
+}
+
+section[id] {
+  scroll-margin-top: 100px; /* Adjust based on navbar height */
+}
+
+/* Section Reveal on Scroll */
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 .section-reveal {
     opacity: 0;
     transform: translateY(50px);
@@ -251,10 +467,17 @@ body {
     transform: translateY(0);
 }
 
+<<<<<<< HEAD
 /* Loading spinner for LLM call */
 .loader {
     border: 4px solid #f3f3f3; /* Light grey */
     border-top: 4px solid #3B82F6; /* Blue */
+=======
+/* Spinner */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3B82F6;
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
     border-radius: 50%;
     width: 24px;
     height: 24px;
@@ -263,7 +486,10 @@ body {
     vertical-align: middle;
     margin-left: 10px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> c30f96a8231e952b906f6582371ffc586a928fac
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
